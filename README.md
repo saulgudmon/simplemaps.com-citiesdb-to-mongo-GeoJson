@@ -24,3 +24,8 @@ remove default `lng` / `lat` fields
 ```js
 db.cities.updateMany({"_id":{$exists:true}},{$unset:{lng:"", lat:"" }})
 ```
+
+test
+```js
+db.cities.find({location:{$near:{$geometry:{type:"Point",coordinates:[<YOUR_LONGITUDE>,<YOUR_LATITUDE>]},$minDistance: 0,$maxDistance: 5000}}})
+```
