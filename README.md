@@ -12,15 +12,15 @@ mongo
 ```
 add empty location object
 ```js
-db.cities.modified.updateMany({"lat":{$exists:true}},{$set:{"location":{"type":"Point","coordinates":[null, null]}}})
+db.cities.modified.updateMany({"lng":{$exists:true}},{$set:{"location":{"type":"Point","coordinates":[null, null]}}})
 ```
 
-populate location object with data from `lat` / `lng` in the `$$ROOT` scope
+populate location object with data from `lng` / `lat` in the `$$ROOT` scope
 ```js
-db.cities.find({"lat":{$exists:true}}).forEach((item)=>{ var lat=item.lat; var lng=item.lng; db.cities.update({_id: item._id}, {$set:{"location.coordinates.0":lat, "location.coordinates.1":lng }}) })
+db.cities.find({"lat":{$exists:true}}).forEach((item)=>{ var lng=item.lng; var lat=item.lat; db.cities.update({_id: item._id}, {$set:{"location.coordinates.0":lng, "location.coordinates.1":lat }}) })
 ```
 
-remove default `lat` / `lng` fields
+remove default `lng` / `lat` fields
 ```js
-db.cities.updateMany({"_id":{$exists:true}},{$unset:{lat:"", lng:"" }})
+db.cities.updateMany({"_id":{$exists:true}},{$unset:{lng:"", lat:"" }})
 ```
