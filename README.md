@@ -20,3 +20,7 @@ populate location object with data from `lat` / `lng` in the `$$ROOT` scope
 db.cities.find({"lat":{$exists:true}}).forEach((item)=>{ var lat=item.lat; var lng=item.lng; db.cities.update({_id: item._id}, {$set:{"location.coordinates.0":lat, "location.coordinates.1":lng }}) })
 ```
 
+remove default `lat` / `lng` fields
+```js
+db.cities.updateMany({"_id":{$exists:true}},{$unset:{lat:"", lng:"" }})
+```
