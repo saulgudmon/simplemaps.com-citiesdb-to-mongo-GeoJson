@@ -14,7 +14,7 @@ use locations
 ```
 add empty location object
 ```js
-db.cities.modified.updateMany({"lng":{$exists:true}},{$set:{"location":{"type":"Point","coordinates":[null, null]}}})
+db.cities.updateMany({"lng":{$exists:true}},{$set:{"location":{"type":"Point","coordinates":[null, null]}}})
 ```
 
 populate location object with data from `lng` / `lat` in the `$$ROOT` scope
