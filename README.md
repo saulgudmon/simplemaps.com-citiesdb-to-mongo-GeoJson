@@ -4,6 +4,7 @@ A translation of  [simplemaps.com cities data](https://simplemaps.com/static/dat
 
 ## Steps to Create the Translation
 
+download data, unzip, import to mongo, and open mongo cli
 ```bash
 wget https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.75.zip
 unzip simplemaps_worldcities_basicv1.75.zip
