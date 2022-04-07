@@ -37,6 +37,6 @@ test — should return documents for all cities within 500km of you
 db.cities.find({location:{$near:{$geometry:{type:"Point",coordinates:[<YOUR_LONGITUDE>,<YOUR_LATITUDE>]},$minDistance: 0,$maxDistance: 500000}}})
 ```
 
-USE WITH HTML GEOLOCATION API
-???
+USE WITH HTML GEOLOCATION API<br />
+???<br />
 PROFIT!!!
