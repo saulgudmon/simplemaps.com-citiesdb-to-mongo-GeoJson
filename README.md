@@ -32,7 +32,7 @@ build index for test
 db.cities.createIndex({location: "2dsphere"})
 ```
 
-test — should return documents for all cities within 5km of you
+test — should return documents for all cities within 500km of you
 ```js
-db.cities.find({location:{$near:{$geometry:{type:"Point",coordinates:[<YOUR_LONGITUDE>,<YOUR_LATITUDE>]},$minDistance: 0,$maxDistance: 5000}}})
+db.cities.find({location:{$near:{$geometry:{type:"Point",coordinates:[<YOUR_LONGITUDE>,<YOUR_LATITUDE>]},$minDistance: 0,$maxDistance: 500000}}})
 ```
