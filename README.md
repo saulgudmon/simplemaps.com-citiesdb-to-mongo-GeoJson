@@ -1,4 +1,4 @@
-# simplemaps.com-citiesdb-to-mongo-GeoJson
+# simplemaps.com cities db to mongo GeoJSON
 
 A translation of  [simplemaps.com cities data](https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.75.zip) into a MongoDB collection with coordinates matching the [GeoJSON spec](https://www.mongodb.com/docs/manual/reference/geojson/#std-label-geojson-point) to enable [geospatial queries](https://www.mongodb.com/docs/manual/geospatial-queries/)
 
