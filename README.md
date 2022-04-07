@@ -4,12 +4,13 @@ A translation of  [simplemaps.com cities data](https://simplemaps.com/static/dat
 
 ## Steps to Create the Translation
 
-download data, unzip, import to mongo, and open mongo cli
+download data, unzip, import to mongo, open mongo cli, & switch to locations db
 ```bash
 wget https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv1.75.zip
 unzip simplemaps_worldcities_basicv1.75.zip
 mongoimport --type csv -d locations -c cities --headerline worldcities.csv
 mongo
+use locations
 ```
 add empty location object
 ```js
